@@ -198,6 +198,7 @@ ls
 cd app
 cd vendor
 #yum -y install gcc gcc-c++ kernel-devel 
+cho "pek77-0"
 wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
 tar xzvf gcc-4.9.4.tar.gz
 #cd vendor
