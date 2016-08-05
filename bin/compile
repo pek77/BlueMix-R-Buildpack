@@ -204,6 +204,14 @@ tar xzvf gcc-4.9.4.tar.gz
 #cd vendor
 ls
 echo "pek77-1"
+
+#tar -xvf gcc-4.9.3.tar.xz
+#tar xzvf gcc-4.9.4.tar.gz
+cd ..
+cd ..
+
+cd app
+cd vendor
 mkdir AAbuild
 cd AAbuild
 ls
@@ -215,8 +223,6 @@ echo "pek77-4"
 make install
 echo "pek77-5"
 ls
-#tar -xvf gcc-4.9.3.tar.xz
-#tar xzvf gcc-4.9.4.tar.gz
 cd ..
 cd ..
 cd ..
