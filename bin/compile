@@ -204,8 +204,9 @@ tar xzvf gcc-4.9.4.tar.gz
 #cd vendor
 ls
 echo "pek77-1"
-mkdir gcc-build
-cd gcc-build
+mkdir AAbuild
+cd AAbuild
+ls
 echo "pek77-2"
 ../gcc-4.9.4/configure --prefix=../gcc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
 echo "pek77-3"
