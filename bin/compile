@@ -204,9 +204,13 @@ wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.
 tar xzvf gcc-4.9.4.tar.gz
 #cd vendor
 ls
-
+cd gcc-4.9.4
+./configure --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
+make
+make install
 #tar -xvf gcc-4.9.3.tar.xz
 #tar xzvf gcc-4.9.4.tar.gz
+cd ..
 cd ..
 cd ..
 
