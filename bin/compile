@@ -241,7 +241,7 @@ tar zxf gcc-4.9.4.tar.gz
 mkdir "gccF"
 ls
 cd gcc-4.9.4
-./configure --prefix=/home/vcap/app/vendor/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=all --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc --with-mpc=/home/vcap/app/vendor/gcc --with-fpmath=sse
+./configure --prefix=/home/vcap/app/vendor/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=all --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc --with-mpc=/home/vcap/app/vendor/gcc --with-fpmath=sse --disable-multilib
 make
 make install
 #tar -xvf gcc-4.9.3.tar.xz
