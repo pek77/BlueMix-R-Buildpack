@@ -198,41 +198,42 @@ ls
 cd app
 cd vendor
 #yum -y install gcc gcc-c++ kernel-devel 
-wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
-tar xzvf gcc-4.9.4.tar.gz
-#cd vendor
-ls
-
-#echo "PEK77-GMP-4"
-#wget ftp://gcc.gnu.org/pub/gcc/infrastructure/gmp-4.3.2.tar.bz2
-#tar jxvf gmp-4.3.2.tar.bz2
-#cd gmp-4.3.2
-#./configure
-#make -j 8
-#make check
-#make install
-#cd ..
-echo "PEK77-mpfr-2.4.2"
-wget ftp://gcc.gnu.org/pub/gcc/infrastructure/mpfr-2.4.2.tar.bz2
-tar jxvf mpfr-2.4.2.tar.bz2cd mpfr-2.4.2 
-./configure
-make -j 8
+echo "PEK77-gmp-6.1.1"
+wget "https://gmplib.org/download/gmp/gmp-6.1.1.tar.bz2"
+tar jxf gmp-6.1.1.tar.bz2
+mkdir "gmp"
+cd gmp-6.1.1
+./configure --prefix=/tmp/staged/app/vendor/gmp
+make
+make check
+make install
+cd ..
+echo "PEK77-mpfr-3.1.4"
+wget http://www.mpfr.org/mpfr-current/mpfr-3.1.4.tar.gz
+tar zxf mpfr-3.1.4
+mkdir "mpfr"
+cd mpfr-3.1.4
+./configure --prefix=/tmp/staged/app/vendor/mpfr --with-gmp=/tmp/staged/app/vendor/gmp
+make
 make check
 make install
 cd ..
 echo "PEK77-mpc-0.8.1"
-wget ftp://gcc.gnu.org/pub/gcc/infrastructure/mpc-0.8.1.tar.gz
-tar zxvf mpc-0.8.1.tar.gz
-cd mpc-0.8.1
-./configure
-make -j 8
+wget ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz
+tar zxf mpc-1.0.2.tar.gz
+./configure --prefix=/tmp/staged/app/vendor/mpc --with-gmp=/tmp/staged/app/vendor/gmp --with-mpfr=/tmp/staged/app/vendor/mpfr
+make
 make check
 make install
-echo "PEK77-GCC"
 cd ..
-mkdir gcc-build
-cd gcc-build
-../gcc-4.9.4/configure --prefix=/app/vendor/gcc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
+echo "PEK77-GCC"
+wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
+tar zxf gcc-4.9.4.tar.gz
+#cd vendor
+ls
+mkdir "gcc"
+cd gcc
+./configure --prefix=/tmp/staged/app/vendor/gcc --with-gmp=/tmp/staged/app/vendor/gmp --with-mpfr=/tmp/staged/app/vendor/mpfr --with-mpc=/tmp/staged/app/vendor/mpc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
 make
 make install
 ls
