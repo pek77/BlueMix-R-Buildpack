@@ -198,6 +198,14 @@ echo "PEK77-PWD"
 pwd
 cd app
 cd vendor
+echo "PEK77-mpc-1.0.2"
+wget "http://mirror2.openwrt.org/sources/mpc-1.0.2.tar.gz"
+tar zxf mpc-1.0.2.gz
+./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
+make
+#make check
+make install
+cd ..
 #yum -y install gcc gcc-c++ kernel-devel 
 echo "PEK77-gmp-6.1.1"
 wget "https://gmplib.org/download/gmp/gmp-6.1.1.tar.bz2"
@@ -219,14 +227,11 @@ make
 #make check
 make install
 cd ..
-echo "PEK77-mpc-1.0.2"
-wget "http://www.multiprecision.org/mpc/download/mpc-0.9.tar.gz"
-tar zxf mpc-0.9.tar.gz
-./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
-make
-#make check
-make install
-cd ..
+
+export LD_LIBRARY_PATH="/home/vcap/app/vendor/gmp:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/vcap/app/vendor/mpfr:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/vcap/app/vendor/mpc:$LD_LIBRARY_PATH"
+
 echo "PEK77-GCC"
 wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
 tar zxf gcc-4.9.4.tar.gz
@@ -248,10 +253,8 @@ cd ..
 # see http://permalink.gmane.org/gmane.comp.gcc.help/40166
 #mkdir -p $vendordir/gcc-4/lib/gcc/x86_64-unknown-linux-gnu/4.9.3/include-fixed
 #cp /tmp/buildpacks/BlueMix-R-Buildpack/bin/features.h $vendordir/gcc-4/lib/gcc/x86_64-unknown-linux-gnu/4.9.3/include-fixed/features.h
-export LD_LIBRARY_PATH="/app/vendor/gmp:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/app/vendor/mpfr:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/app/vendor/mpc:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/app/vendor/gcc:$LD_LIBRARY_PATH"
+
+export LD_LIBRARY_PATH="/home/vcap/app/vendor/gcc:$LD_LIBRARY_PATH"
 # https://www.gnu.org/software/libc/
 #glibc_version=2.7
 #download "http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz" glibc_2.23.tar.gz
