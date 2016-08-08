@@ -238,7 +238,7 @@ tar zxf gcc-4.9.4.tar.gz
 ls
 mkdir "gcc"
 cd gcc
-./configure --prefix=/home/vcap/app/vendor/gcc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr --with-mpc=/home/vcap/app/vendor/mpc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
+./configure --prefix=/home/vcap/app/vendor/gcc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
 make
 make install
 ls
