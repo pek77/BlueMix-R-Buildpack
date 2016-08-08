@@ -194,7 +194,8 @@ export LIBRARY_PATH=".:$BUILD_DIR/lib:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu"
 ls
 #GSC-20160805
 
-
+echo "PEK77-PWD"
+pwd
 cd app
 cd vendor
 #yum -y install gcc gcc-c++ kernel-devel 
