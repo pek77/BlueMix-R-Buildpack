@@ -204,7 +204,7 @@ wget "https://gmplib.org/download/gmp/gmp-6.1.1.tar.bz2"
 tar jxf gmp-6.1.1.tar.bz2
 mkdir "gmp"
 cd gmp-6.1.1
-./configure --prefix=/tmp/staged/app/vendor/gmp
+./configure --prefix=/home/vcap/app/vendor/gmp
 make
 #make check
 make install
@@ -214,7 +214,7 @@ wget "http://www.mpfr.org/mpfr-current/mpfr-3.1.4.tar.gz"
 tar zxf mpfr-3.1.4.tar.gz
 mkdir "mpfr"
 cd mpfr-3.1.4
-./configure --prefix=/tmp/staged/app/vendor/mpfr --with-gmp=/tmp/staged/app/vendor/gmp
+./configure --prefix=/home/vcap/app/vendor/mpfr --with-gmp=/home/vcap/app/vendor/gmp
 make
 #make check
 make install
@@ -222,7 +222,7 @@ cd ..
 echo "PEK77-mpc-1.0.2"
 wget "http://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz"
 tar zxf mpc-1.0.2.tar.gz
-./configure --prefix=/tmp/staged/app/vendor/mpc --with-gmp=/tmp/staged/app/vendor/gmp --with-mpfr=/tmp/staged/app/vendor/mpfr
+./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
 make
 #make check
 make install
@@ -234,7 +234,7 @@ tar zxf gcc-4.9.4.tar.gz
 ls
 mkdir "gcc"
 cd gcc
-./configure --prefix=/tmp/staged/app/vendor/gcc --with-gmp=/tmp/staged/app/vendor/gmp --with-mpfr=/tmp/staged/app/vendor/mpfr --with-mpc=/tmp/staged/app/vendor/mpc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
+./configure --prefix=/home/vcap/app/vendor/gcc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr --with-mpc=/home/vcap/app/vendor/mpc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
 make
 make install
 ls
@@ -248,6 +248,9 @@ cd ..
 # see http://permalink.gmane.org/gmane.comp.gcc.help/40166
 #mkdir -p $vendordir/gcc-4/lib/gcc/x86_64-unknown-linux-gnu/4.9.3/include-fixed
 #cp /tmp/buildpacks/BlueMix-R-Buildpack/bin/features.h $vendordir/gcc-4/lib/gcc/x86_64-unknown-linux-gnu/4.9.3/include-fixed/features.h
+export LD_LIBRARY_PATH="/app/vendor/gmp:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/app/vendor/mpfr:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/app/vendor/mpc:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/app/vendor/gcc:$LD_LIBRARY_PATH"
 # https://www.gnu.org/software/libc/
 #glibc_version=2.7
