@@ -202,7 +202,7 @@ wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.
 tar xzvf gcc-4.9.4.tar.gz
 #cd vendor
 ls
-echo "GMP-4"
+echo "PEK77-GMP-4"
 wget ftp://gcc.gnu.org/pub/gcc/infrastructure/gmp-4.3.2.tar.bz2
 tar jxvf gmp-4.3.2.tar.bz2
 cd gmp-4.3.2
@@ -211,7 +211,7 @@ make -j 8
 make check
 make install
 cd ..
-echo "mpfr-2.4.2"
+echo "PEK77-mpfr-2.4.2"
 wget ftp://gcc.gnu.org/pub/gcc/infrastructure/mpfr-2.4.2.tar.bz2
 tar jxvf mpfr-2.4.2.tar.bz2cd mpfr-2.4.2 
 ./configure
@@ -219,7 +219,7 @@ make -j 8
 make check
 make install
 cd ..
-echo "mpc-0.8.1"
+echo "PEK77-mpc-0.8.1"
 wget ftp://gcc.gnu.org/pub/gcc/infrastructure/mpc-0.8.1.tar.gz
 tar zxvf mpc-0.8.1.tar.gz
 cd mpc-0.8.1
@@ -227,7 +227,7 @@ cd mpc-0.8.1
 make -j 8
 make check
 make install
-echo "GCC"
+echo "PEK77-GCC"
 cd ..
 mkdir gcc-build
 cd gcc-build
