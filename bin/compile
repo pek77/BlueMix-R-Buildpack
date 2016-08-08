@@ -236,14 +236,16 @@ ls
 export LD_LIBRARY_PATH="/home/vcap/app/vendor/gcc:$LD_LIBRARY_PATH"
 
 echo "PEK77-GCC"
-wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
-tar zxf gcc-4.9.4.tar.gz
-mkdir "gccF"
-ls
-cd gcc-4.9.4
-./configure --prefix=/home/vcap/app/vendor/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=c,fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc --with-mpc=/home/vcap/app/vendor/gcc --with-fpmath=sse --disable-multilib
-make
-make install
+#wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
+#tar zxf gcc-4.9.4.tar.gz
+#mkdir "gccF"
+#ls
+#cd gcc-4.9.4
+#./configure --prefix=/home/vcap/app/vendor/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=c,fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc --with-mpc=/home/vcap/app/vendor/gcc --with-fpmath=sse --disable-multilib
+wget "http://gfortran.meteodat.ch/download/x86_64/gfortran-fetch-and-install.sh"
+./gfortran-fetch-and-install
+#make
+#make install
 #tar -xvf gcc-4.9.3.tar.xz
 #tar xzvf gcc-4.9.4.tar.gz
 cd ..
