@@ -225,7 +225,7 @@ export LD_LIBRARY_PATH="/home/vcap/app/vendor/mpfr:$LD_LIBRARY_PATH"
 echo "PEK77-mpc-1.0.3"
 wget "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"
 tar zxf mpc-1.0.3.tar.gz
-cd mpc-1.0.3.tar.gz
+cd mpc-1.0.3
 ./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=home/vcap/app/vendor/mpfr
 make
 #make check
