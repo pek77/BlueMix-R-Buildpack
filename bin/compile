@@ -220,8 +220,8 @@ make
 make install
 cd ..
 echo "PEK77-mpc-1.0.2"
-wget "http://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz"
-tar zxf mpc-1.0.2.tar.gz
+wget "http://www.multiprecision.org/mpc/download/mpc-0.9.tar.gz"
+tar zxf mpc-0.9.tar.gz
 ./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
 make
 #make check
