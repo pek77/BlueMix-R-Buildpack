@@ -199,8 +199,8 @@ pwd
 cd app
 cd vendor
 echo "PEK77-mpc-1.0.3"
-wget "http://ftp.jaist.ac.jp/pub/GNU/mpc/mpc-1.0.3.tar.gz"
-tar zxf mpc-1.0.3.tar.gz
+wget "http://ftpmirror.gnu.org/mpc/mpc-1.0.2.tar.gz"
+tar zxf mpc-1.0.2.tar.gz
 ./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
 make
 #make check
