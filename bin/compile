@@ -198,9 +198,9 @@ echo "PEK77-PWD"
 pwd
 cd app
 cd vendor
-echo "PEK77-mpc-1.0.2"
-wget "http://mirror2.openwrt.org/sources/mpc-1.0.2.tar.gz"
-tar zxf mpc-1.0.2.gz
+echo "PEK77-mpc-1.0.3"
+wget "https://ftp.gnu.org/pub/gnu/mpc/mpc-1.0.3.tar.gz"
+tar zxf mpc-1.0.3.tar.gz
 ./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
 make
 #make check
