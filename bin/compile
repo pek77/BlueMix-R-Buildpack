@@ -218,8 +218,8 @@ make
 #make check
 make install
 cd ..
-echo "PEK77-mpc-0.8.1"
-wget "ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz"
+echo "PEK77-mpc-1.0.2"
+wget "http://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz"
 tar zxf mpc-1.0.2.tar.gz
 ./configure --prefix=/tmp/staged/app/vendor/mpc --with-gmp=/tmp/staged/app/vendor/gmp --with-mpfr=/tmp/staged/app/vendor/mpfr
 make
