@@ -198,14 +198,6 @@ echo "PEK77-PWD"
 pwd
 cd app
 cd vendor
-echo "PEK77-mpc-1.0.3"
-wget "http://ftpmirror.gnu.org/mpc/mpc-1.0.2.tar.gz"
-tar zxf mpc-1.0.2.tar.gz
-./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
-make
-#make check
-make install
-cd ..
 #yum -y install gcc gcc-c++ kernel-devel 
 echo "PEK77-gmp-6.1.1"
 wget "https://gmplib.org/download/gmp/gmp-6.1.1.tar.bz2"
@@ -217,6 +209,7 @@ make
 #make check
 make install
 cd ..
+export LD_LIBRARY_PATH="/home/vcap/app/vendor/gmp:$LD_LIBRARY_PATH"
 echo "PEK77-mpfr-3.1.4"
 wget "http://www.mpfr.org/mpfr-current/mpfr-3.1.4.tar.gz"
 tar zxf mpfr-3.1.4.tar.gz
@@ -227,10 +220,16 @@ make
 #make check
 make install
 cd ..
-
-export LD_LIBRARY_PATH="/home/vcap/app/vendor/gmp:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/vendor/mpfr:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/home/vcap/app/vendor/mpc:$LD_LIBRARY_PATH"
+
+echo "PEK77-mpc-1.0.3"
+wget "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"
+tar zxf mpc-1.0.3.tar.gz
+./configure --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=/home/vcap/app/vendor/mpfr
+make
+#make check
+make install
+cd ..
 
 echo "PEK77-GCC"
 wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
