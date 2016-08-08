@@ -225,6 +225,7 @@ export LD_LIBRARY_PATH="/home/vcap/app/vendor/mpfr:$LD_LIBRARY_PATH"
 echo "PEK77-mpc-1.0.3"
 wget "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"
 tar zxf mpc-1.0.3.tar.gz
+mkdir "mpc"
 cd mpc-1.0.3
 ./configure --prefix=/home/vcap/app/vendor/mpc --with-gmp=/home/vcap/app/vendor/gmp --with-mpfr=home/vcap/app/vendor/mpfr
 make
@@ -237,6 +238,7 @@ wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.
 tar zxf gcc-4.9.4.tar.gz
 #cd vendor
 ls
+mkdir "gcc"
 cd gcc-4.9.4
 ./configure --prefix=/home/vcap/app/vendor/gcc --with-gmp=home/vcap/app/vendor/gmp --with-mpfr=home/vcap/app/vendor/mpfr --with-mpc=/home/vcap/app/vendor/mpc --enable-threads=posix --disable-checking --enable--long-long --host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java,fortran 
 make
