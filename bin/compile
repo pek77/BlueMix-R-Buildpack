@@ -206,7 +206,7 @@ wget "https://gmplib.org/download/gmp/gmp-6.1.1.tar.bz2"
 tar jxf gmp-6.1.1.tar.bz2
 cd gmp-6.1.1
 ./configure --disable-shared --enable-static --prefix=/home/vcap/app/vendor/gcc
-make
+make -j
 #make check
 make install
 cd ..
@@ -217,7 +217,7 @@ wget "http://www.mpfr.org/mpfr-current/mpfr-3.1.4.tar.gz"
 tar zxf mpfr-3.1.4.tar.gz
 cd mpfr-3.1.4
 ./configure --disable-shared --enable-static --prefix=/home/vcap/app/vendor/gcc --with-gmp=/home/vcap/app/vendor/gcc
-make
+make -j
 #make check
 make install
 cd ..
@@ -228,7 +228,7 @@ wget "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"
 tar zxf mpc-1.0.3.tar.gz
 cd mpc-1.0.3
 ./configure --disable-shared --enable-static --prefix=/home/vcap/app/vendor/gcc --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc
-make
+make -j
 #make check
 make install
 cd ..
@@ -242,7 +242,7 @@ mkdir "gccF"
 ls
 cd gcc-4.9.4
 ./configure --prefix=/home/vcap/app/vendor/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=c,fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc --with-mpc=/home/vcap/app/vendor/gcc --with-fpmath=sse --disable-multilib
-make
+make -j
 make install
 tar -xvf gcc-4.9.3.tar.xz
 tar xzvf gcc-4.9.4.tar.gz
