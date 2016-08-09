@@ -251,7 +251,11 @@ cd gccF
 cd lib
 cd gcc
 echo "=====1111111======"
-find -name "lib64"
+find / -name "lib64"
+echo "=====2222222======"
+
+echo "=====1111111======"
+find / -name "gfortran"
 echo "=====2222222======"
 #echo "=====1111111======"
 #ls -r
