@@ -248,11 +248,15 @@ make install
 echo "PEK77-gfortran"
 cd ..
 cd gccF
+ls
 echo "=====1111111======"
 find -name "lib64"
 echo "=====2222222======"
+echo "=====3333333======"
+find -name "gfortran"
+echo "=====4444444======"
 cd lib
-cd gcc
+ls
 #echo "=====1111111======"
 #ls -r
 #echo "=====2222222======"
@@ -271,9 +275,9 @@ cd gcc
 # see http://permalink.gmane.org/gmane.comp.gcc.help/40166
 #mkdir -p $vendordir/gcc-4/lib/gcc/x86_64-unknown-linux-gnu/4.9.3/include-fixed
 #cp /tmp/buildpacks/BlueMix-R-Buildpack/bin/features.h $vendordir/gcc-4/lib/gcc/x86_64-unknown-linux-gnu/4.9.3/include-fixed/features.h
-export LIBRARY_PATH="$BUILD_DIR/lib:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/home/vcap/app/vendor/gccF:$LIBDIR"
-export LD_LIBRARY_PATH="/home/vcap/app/vendor/gccF:$LD_LIBRARY_PATH:$LIBDIR"
-export LD_RUN_PATH="/home/vcap/app/vendor/gccF:$LD_LIBRARY_PATH:$LIBDIR"
+export LIBRARY_PATH="$BUILD_DIR/lib:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/home/vcap/app/vendor/gccF/lib:/home/vcap/app/vendor/gccF/bin"
+export LD_LIBRARY_PATH="/home/vcap/app/vendor/gccF/lib:/home/vcap/app/vendor/gccF/bin:$LD_LIBRARY_PATH"
+#export LD_RUN_PATH="/home/vcap/app/vendor/gccF:$LD_LIBRARY_PATH:$LIBDIR"
 gfortran --version
 # https://www.gnu.org/software/libc/
 #glibc_version=2.7
