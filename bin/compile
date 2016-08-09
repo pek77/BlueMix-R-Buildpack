@@ -236,6 +236,7 @@ ls
 export LD_LIBRARY_PATH="/home/vcap/app/vendor/gcc:$LD_LIBRARY_PATH"
 
 echo "PEK77-GCC"
+which gfortran
 wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
 tar zxf gcc-4.9.4.tar.gz
 mkdir "gccF"
@@ -244,6 +245,8 @@ cd gcc-4.9.4
 ./configure --prefix=/home/vcap/app/vendor/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=c,fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/vendor/gcc  --with-mpfr=/home/vcap/app/vendor/gcc --with-mpc=/home/vcap/app/vendor/gcc --with-fpmath=sse --disable-multilib
 make -j16
 make install
+echo "PEK77-gfortran"
+which gfortran
 cd ..
 ls
 cd ..
@@ -260,8 +263,8 @@ export LD_LIBRARY_PATH="/home/vcap/app/vendor/gccF:$LD_LIBRARY_PATH"
 #download "http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz" glibc_2.23.tar.gz
 #tar xzf /tmp/buildpacks/BlueMix-R-Buildpack/bin/glibc_2.23.tar.gz -C $vendordir
 cd $R_HOME/R-3.3.1/
-./configure
-make
+./configure F77=gfortran
+make -j16
 cp -R $VENDOR_DIR/R /app/vendor
 
 echo "Stuff copied" | indent
