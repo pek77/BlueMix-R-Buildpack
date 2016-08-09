@@ -252,7 +252,7 @@ echo "=====1111111======"
 cd /tmp/buildpacks/BlueMix-R-Buildpack/bin/
 ls
 cd /usr/bin/
-ln -s /home/vcap/app/vendor/gccF/gfortran gfortran
+ln -s /home/vcap/app/vendor/gccF/bin/gfortran gfortran
 #echo "=====1111111======"
 #ls -r
 #echo "=====2222222======"
@@ -274,13 +274,13 @@ ln -s /home/vcap/app/vendor/gccF/gfortran gfortran
 export LIBRARY_PATH="$BUILD_DIR/lib:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/home/vcap/app/vendor/gccF/lib64:/home/vcap/app/vendor/gccF/bin:/home/vcap/app/vendor/gccF/lib"
 export LD_LIBRARY_PATH="/home/vcap/app/vendor/gccF/lib:/home/vcap/app/vendor/gccF/lib64:/home/vcap/app/vendor/gccF/bin:$LD_LIBRARY_PATH"
 #export LD_RUN_PATH="/home/vcap/app/vendor/gccF:$LD_LIBRARY_PATH:$LIBDIR"
-gfortran --version
+/home/vcap/app/vendor/gccF/bin/gfortran --version
 # https://www.gnu.org/software/libc/
 #glibc_version=2.7
 #download "http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz" glibc_2.23.tar.gz
 #tar xzf /tmp/buildpacks/BlueMix-R-Buildpack/bin/glibc_2.23.tar.gz -C $vendordir
 cd $R_HOME/R-3.3.1/
-./configure F77=gfortran
+./configure F77=/home/vcap/app/vendor/gccF/bin/gfortran
 make -j16
 cp -R $VENDOR_DIR/R /app/vendor
 
