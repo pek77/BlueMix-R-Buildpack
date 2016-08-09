@@ -248,6 +248,7 @@ make install
 echo "PEK77-gfortran"
 cd ..
 cd gccF
+/home/vcap/app/vendor/gccF/bin/gfortran --version
 echo "=====1111111======"
 cd /tmp/buildpacks/BlueMix-R-Buildpack/bin/
 ls
@@ -274,7 +275,6 @@ ln -s /home/vcap/app/vendor/gccF/bin/gfortran gfortran
 export LIBRARY_PATH="$BUILD_DIR/lib:/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/home/vcap/app/vendor/gccF/lib64:/home/vcap/app/vendor/gccF/bin:/home/vcap/app/vendor/gccF/lib"
 export LD_LIBRARY_PATH="/home/vcap/app/vendor/gccF/lib:/home/vcap/app/vendor/gccF/lib64:/home/vcap/app/vendor/gccF/bin:$LD_LIBRARY_PATH"
 #export LD_RUN_PATH="/home/vcap/app/vendor/gccF:$LD_LIBRARY_PATH:$LIBDIR"
-/home/vcap/app/vendor/gccF/bin/gfortran --version
 # https://www.gnu.org/software/libc/
 #glibc_version=2.7
 #download "http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz" glibc_2.23.tar.gz
