@@ -251,6 +251,8 @@ cd gccF
 echo "=====1111111======"
 cd /tmp/buildpacks/BlueMix-R-Buildpack/bin/
 ls
+cd /usr/bin/
+ln -s /home/vcap/app/vendor/gccF/gfortran gfortran
 #echo "=====1111111======"
 #ls -r
 #echo "=====2222222======"
@@ -349,7 +351,7 @@ echo "variables set" | indent
 echo "R_HOME points to: $R_HOME"| indent
 
 # install dependencies from CRAN
- echo "Executing init.r script" | indent
+echo "Executing init.r script" | indent
 
 # set the CRAN mirror and run the init.r program
  R -s --vanilla <<RPROG
