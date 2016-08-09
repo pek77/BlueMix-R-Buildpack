@@ -249,7 +249,7 @@ echo "PEK77-gfortran"
 cd ..
 cd gccF
 echo "=====1111111======"
-cd /tmp/buildpacks/BlueMix-R-Buildpack/bin/compile
+cd /tmp/buildpacks/BlueMix-R-Buildpack/bin/
 ls
 #echo "=====1111111======"
 #ls -r
