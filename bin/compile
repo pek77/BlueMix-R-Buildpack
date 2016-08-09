@@ -247,14 +247,12 @@ make -j16
 make install
 echo "PEK77-gfortran"
 cd ..
-ls
 cd gccF
 cd lib
 cd gcc
-ls
 cd x86_64-unknown-linux-gnu
-ls
 cd 4.9.4
+cd include
 ls
 
 # patch gcc features.h file
