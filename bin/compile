@@ -251,7 +251,10 @@ ls
 cd gccF
 cd lib
 cd gcc
-cd x86_64-unknown-linux-gnu/4.9.4/
+ls
+cd x86_64-unknown-linux-gnu
+ls
+cd 4.9.4
 ls
 
 # patch gcc features.h file
