@@ -250,12 +250,22 @@ cd ..
 cd gccF
 cd lib
 cd gcc
-cd x86_64-unknown-linux-gnu
-cd 4.9.4
-ls -r
-echo "$LIBDIR"| indent
-cd include
-ls -r
+echo "=====1111111======"
+find -name "lib64"
+echo "=====2222222======"
+#echo "=====1111111======"
+#ls -r
+#echo "=====2222222======"
+#cd x86_64-unknown-linux-gnu
+#ls -r
+#echo "=====3333333======"
+#cd 4.9.4
+#ls -r
+#echo "=====4444444======"
+#echo "$LIBDIR"| indent
+#echo "=================="
+#cd include
+#ls -r
 
 # patch gcc features.h file
 # see http://permalink.gmane.org/gmane.comp.gcc.help/40166
