@@ -246,14 +246,9 @@ cd gcc-4.9.4
 make -j16
 make install
 echo "PEK77-gfortran"
-cd ..
-cd gccF
 /home/vcap/app/vendor/gccF/bin/gfortran --version
 echo "=====1111111======"
-cd /tmp/buildpacks/BlueMix-R-Buildpack/bin/
-ls
-cd /usr/bin/
-ln -s /home/vcap/app/vendor/gccF/bin/gfortran gfortran
+
 #echo "=====1111111======"
 #ls -r
 #echo "=====2222222======"
