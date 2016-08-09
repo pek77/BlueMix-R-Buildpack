@@ -30,7 +30,7 @@ function build() {
   pushd $1
     ./configure --prefix=$VENDOR_DIR/$2 ${@:3} > /dev/null 2>&1
     echo "configure finished" | indent
-    make
+    make -j
     echo "make finished" | indent
     make install > /dev/null 2>&1
     echo "install finished" | indent
@@ -156,7 +156,7 @@ unzip libf2c.zip
 echo "================" |indent
 echo "libf2c successfully unzipped. Starting make" | indent
 cp makefile.u Makefile
-make
+make -j
 echo "================" |indent
 echo "libf2c make completed copying results." | indent
 cp f2c.h $BUILD_DIR/include
@@ -217,7 +217,7 @@ wget "http://www.mpfr.org/mpfr-current/mpfr-3.1.4.tar.gz"
 tar zxf mpfr-3.1.4.tar.gz
 cd mpfr-3.1.4
 ./configure --disable-shared --enable-static --prefix=/home/vcap/app/vendor/gcc --with-gmp=/home/vcap/app/vendor/gcc
-make -j
+make
 #make check
 make install
 cd ..
