@@ -236,7 +236,6 @@ ls
 export LD_LIBRARY_PATH="/home/vcap/app/vendor/gcc:$LD_LIBRARY_PATH"
 
 echo "PEK77-GCC"
-gfortran --version
 wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz" -O "gcc-4.9.4.tar.gz"
 tar zxf gcc-4.9.4.tar.gz
 mkdir "gccF"
