@@ -275,7 +275,7 @@ export PATH="/home/vcap/app/vendor/gccF/bin:/home/vcap/app/vendor/gccF/bin/gfort
 #download "http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz" glibc_2.23.tar.gz
 #tar xzf /tmp/buildpacks/BlueMix-R-Buildpack/bin/glibc_2.23.tar.gz -C $vendordir
 cd $R_HOME/R-3.3.1/
-./configure 'CFLAGS=-g -O2 -fPIC' --with-x=no --enable-shared
+./configure --disable-shared
 make -j16
 cp -R $VENDOR_DIR/R /app/vendor
 
