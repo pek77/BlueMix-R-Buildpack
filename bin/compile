@@ -146,7 +146,7 @@ sleep 2
 # need to copy the binaries to /app/vendor so that R works
 # cp -R $VENDOR_DIR/gcc /app/vendor/gcc
 # cp -R $VENDOR_DIR/glibc /app/vendor/glibc
-export PATH=./:/home/vcap/app/vendor/R/bin:$BUILD_DIR/lib:$PATH
+export PATH=./:/app/vendor/R/bin:$BUILD_DIR/lib:$PATH
 cd $VENDOR_DIR/F/f2c/
 chmod a+x src/xsum
 mkdir -p libf2c
@@ -287,11 +287,14 @@ echo "Stuff copied" | indent
 # R needs to know where gfortran and glibc header files are
 # export LDFLAGS="-L/app/vendor/gcc/lib64/"
 # export CPPFLAGS="-I/app/vendor/glibc/string/ -I/app/vendor/glibc/time -I/usr/include/x86_64-linux-gnu/sys -I/usr/include/x86_64-linux-gnu/gnu"
-export R_HOME=/home/vcap/app/vendor/R
+echo "========="
+echo "$R_HOME"
+echo "=========="
+export R_HOME=/app/vendor/R
 export R_INCLUDE="$R_HOME/include:$BUILD_DIR/include"
 export LD_LIBRARY_PATH="$R_HOME/lib:$LD_LIBRARY_PATH"
 export LIBRARY_PATH="$R_HOME/lib:$LIBARY_PATH"
-export PATH="$R_HOME/bin:$PATH"
+export PATH="/app/vendor/R/bin:$PATH"
 echo "PATH =$PATH"| indent
 # echo "LDFLAGS =$LDFLAGS"| indent
 # echo "CPPFLAGS =$CPPFLAGS"| indent
@@ -337,8 +340,8 @@ echo "variables set" | indent
  echo "environment copied" | indent
 
 # prevent warnings
- mkdir -p /home/vcap/app/vendor/R/lib64/R/doc/html
- touch /home/vcap/app/vendor/R/lib64/R/doc/html/R.css
+ mkdir -p /app/vendor/R/lib64/R/doc/html
+ touch /app/vendor/R/lib64/R/doc/html/R.css
 
 
 # add ldpaths to existing space
@@ -373,7 +376,7 @@ echo "R $R_VERSION successfully installed" | indent
 rm -rf $VENDOR_DIR && mkdir -p $VENDOR_DIR
 # cp -R /app/vendor/gcc $VENDOR_DIR/gcc
 # cp -R /app/vendor/glibc $VENDOR_DIR/glibc
-cp -R /home/vcap/app/vendor/app/vendor/R $VENDOR_DIR/R
+cp -R /app/vendor/R $VENDOR_DIR/R
 
 
 # HACK
