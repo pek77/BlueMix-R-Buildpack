@@ -67,6 +67,16 @@ export PATH="/home/vcap/app/R/bin/:/home/vcap/app/R/bin/R:$PATH"
 export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
 R --version
-R --no-save /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
+R -s —vanilla <<RPROG
+	print("=====HHH+++++")
+	a<-c(1:20)
+	b<-rep(c(1:4),5)
+	c<-a/b
+	data<-data.frame(a,b,c)
+	write.table(data,file=”/home/vcap/app/data2”,row.names=FALSE)
+RPROG
+cat /home/vcap/app/data2
+
+R --no-save < /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
 cat /home/vcap/app/data1
 
