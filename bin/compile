@@ -1,3 +1,2 @@
-cd /home/vcap/app/support_heroku_buildpacks
-cd app
+cd /home/vcap/app/
 ls
