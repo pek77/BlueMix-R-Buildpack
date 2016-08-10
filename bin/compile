@@ -1,6 +1,2 @@
-cd ..
-cd ..
-ls
-echo "======="
-cd home
+cd /home/vcap/
 ls
