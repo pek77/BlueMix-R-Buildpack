@@ -61,6 +61,7 @@ cd R-3.3.1
 make -j16
 make install
 cd ..
+echo "PEK77-FINISH"
 
 export PATH="$R_HOME/bin/R:$PATH"
 export LIBRARY_PATH="$R_HOME/lib:$LIBRARY_PATH"
