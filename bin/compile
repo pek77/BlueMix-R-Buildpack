@@ -45,6 +45,7 @@ cd gcc-4.9.4
 ./configure --prefix=/home/vcap/app/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/gcc  --with-mpfr=/home/vcap/app/gcc --with-mpc=/home/vcap/app/gcc --with-fpmath=sse --disable-multilib
 make -j16
 make install
+cd ..
 
 export LIBRARY_PATH="/home/vcap/app/gccF/lib64:/home/vcap/app/gccF/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/gccF/lib:/home/vcap/app/gccF/lib64:$LD_LIBRARY_PATH"
@@ -59,6 +60,7 @@ cd R-3.3.1
 ./configure --prefix=/home/vcap/app/R --with-readline=yes --with-libpng=yes --with-x=no
 make -j16
 make install
+cd ..
 
 export PATH="$R_HOME/bin/R:$PATH"
 export LIBRARY_PATH="$R_HOME/lib:$LIBRARY_PATH"
