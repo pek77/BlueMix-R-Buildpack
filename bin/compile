@@ -1,1 +1,5 @@
-pwd
+cd /
+ls
+echo "======="
+cd home
+ls
