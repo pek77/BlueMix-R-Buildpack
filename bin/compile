@@ -66,8 +66,7 @@ echo "PEK77-FINISH"
 export PATH="/home/vcap/app/R/bin/:/home/vcap/app/R/bin/R:$PATH"
 export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
-/home/vcap/app/R/bin/R --version
-echo "PEK77-VERSION"
-cd /home/vcap/app/R
-ls
 R --version
+R /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
+cat /home/vcap/app/data1
+
