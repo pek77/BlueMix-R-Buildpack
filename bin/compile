@@ -275,9 +275,9 @@ export PATH="/home/vcap/app/vendor/gccF/bin:/home/vcap/app/vendor/gccF/bin/gfort
 #download "http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz" glibc_2.23.tar.gz
 #tar xzf /tmp/buildpacks/BlueMix-R-Buildpack/bin/glibc_2.23.tar.gz -C $vendordir
 cd $R_HOME/R-3.3.1/
-./configure ./configure --without-pic --disable-shared
+./configure --prefix=/home/vcap/app/vendor/R --without-pic --disable-shared
 make -j16
-cp -R $VENDOR_DIR/R /app/vendor
+#cp -R $VENDOR_DIR/R /app/vendor
 
 echo "Stuff copied" | indent
 # find /app/vendor/ type -d -print0 | xargs -0 ls -ld
@@ -287,14 +287,11 @@ echo "Stuff copied" | indent
 # R needs to know where gfortran and glibc header files are
 # export LDFLAGS="-L/app/vendor/gcc/lib64/"
 # export CPPFLAGS="-I/app/vendor/glibc/string/ -I/app/vendor/glibc/time -I/usr/include/x86_64-linux-gnu/sys -I/usr/include/x86_64-linux-gnu/gnu"
-echo "========="
-echo "$R_HOME"
-echo "=========="
-export R_HOME=/app/vendor/R
+export R_HOME=/"home/vcap/app/vendor/R"
 export R_INCLUDE="$R_HOME/include:$BUILD_DIR/include"
 export LD_LIBRARY_PATH="$R_HOME/lib:$LD_LIBRARY_PATH"
 export LIBRARY_PATH="$R_HOME/lib:$LIBARY_PATH"
-export PATH="/app/vendor/R/bin:$PATH"
+export PATH="$R_HOME/bin:$PATH"
 echo "PATH =$PATH"| indent
 # echo "LDFLAGS =$LDFLAGS"| indent
 # echo "CPPFLAGS =$CPPFLAGS"| indent
