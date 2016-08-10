@@ -63,3 +63,4 @@ make install
 export PATH="$R_HOME/bin/R:$PATH"
 export LIBRARY_PATH="$R_HOME/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="$R_HOME/lib:$LD_LIBRARY_PATH"
+R --version
