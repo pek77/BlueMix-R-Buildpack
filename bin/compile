@@ -1,2 +1,2 @@
-cd /home/vcap/
+cd /home/vcap/app
 ls
