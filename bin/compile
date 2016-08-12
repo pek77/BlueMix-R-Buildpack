@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+cd /usr/bin/
+ls
 cd /home/vcap/app/
+
 
 mkdir R
 mkdir gcc
@@ -28,7 +31,7 @@ make install
 cd ..
 
 echo "PEK77-mpc-1.0.3"
-wget "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"
+wget "ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz"
 tar zxf mpc-1.0.3.tar.gz
 cd mpc-1.0.3
 ./configure --disable-shared --enable-static --prefix=/home/vcap/app/gcc --with-gmp=/home/vcap/app/gcc  --with-mpfr=/home/vcap/app/gcc
