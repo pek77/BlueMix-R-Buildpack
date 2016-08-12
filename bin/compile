@@ -63,11 +63,19 @@ make install
 cd ..
 echo "PEK77-FINISH"
 
-export PATH="/home/vcap/app/R/bin/:/home/vcap/app/R/bin/R:$PATH"
+echo "PEK77-R"
+cd /home/vcap/app/R/
+ls
+echo "PEK77-R-BIN"
+cd /home/vcap/app/R/bin
+ls
+
+export PATH="/home/vcap/app/R/bin/:$PATH"
 export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
 R --version
-R -s --vanilla <<RPROG
+R --vanilla <<RPROG
+	library()  
 	print("=====HHH+++++")
 	a<-c(1:20)
 	b<-c(1:4)
