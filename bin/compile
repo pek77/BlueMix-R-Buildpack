@@ -72,8 +72,7 @@ export PATH="/home/vcap/app/R/bin/:$PATH"
 export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
 R --version
-Rscript --vanilla <<RPROG
-	library()  
+R --vanilla <<RPROG
 	print("=====HHH+++++")
 	a<-c(1:20)
 	b<-c(1:4)
@@ -83,7 +82,7 @@ Rscript --vanilla <<RPROG
 RPROG
 cat /home/vcap/app/data2
 
-Rscript --no-save < /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
+R --no-save < /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
 cat /home/vcap/app/data1
 
 Rscript --version
