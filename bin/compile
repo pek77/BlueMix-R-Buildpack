@@ -63,14 +63,20 @@ make install
 cd ..
 echo "PEK77-FINISH"
 
-echo "PEK77-R-HOME"
-cd /home/vcap/app/R/
+echo "PEK77-R-HOME-LIB"
+cd /home/vcap/app/R/lib
 ls
-echo "PEK77-R-HOME"
-echo "PEK77-R-BIN"
-cd /home/vcap/app/R/bin
+echo "PEK77-R-HOME-LIB"
+
+echo "PEK77-R-BIN-R"
+cd /home/vcap/app/R/bin/R
 ls
-echo "PEK77-R-BIN"
+echo "PEK77-R-BIN-R"
+
+echo "PEK77-R-BIN-Rscript"
+cd /home/vcap/app/R/bin/Rscript
+ls
+echo "PEK77-R-BIN-Rscript"
 export PATH="/home/vcap/app/R/bin/:$PATH"
 export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
@@ -88,4 +94,6 @@ cat /home/vcap/app/data2
 
 R --no-save < /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
 cat /home/vcap/app/data1
+
+Rscript --version
 
