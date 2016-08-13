@@ -83,7 +83,7 @@ Rscript --vanilla <<RPROG
 RPROG
 cat /home/vcap/app/data2
 
-Rscript--no-save < /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
+Rscript --no-save < /tmp/buildpacks/BlueMix-R-Buildpack/bin/test.R
 cat /home/vcap/app/data1
 
 Rscript --version
