@@ -47,9 +47,9 @@ make -j16
 make install
 cd ..
 
-export LIBRARY_PATH="/home/vcap/app/gccF/lib64:/home/vcap/app/gccF/lib:$LIBRARY_PATH"
-export LD_LIBRARY_PATH="/home/vcap/app/gccF/lib:/home/vcap/app/gccF/lib64:$LD_LIBRARY_PATH"
-export PATH="/home/vcap/app/gccF/bin:/home/vcap/app/gccF/bin/gfortran:$PATH"
+export LIBRARY_PATH="$LIBRARY_PATH:/home/vcap/app/gccF/lib64:/home/vcap/app/gccF/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/vcap/app/gccF/lib:/home/vcap/app/gccF/lib64"
+export PATH="$PATH:/home/vcap/app/gccF/bin"
 
 #export R_HOME="/home/vcap/app/R:$R_HOME"
 
@@ -68,9 +68,9 @@ cd /home/vcap/app/R/lib/R
 ls
 echo "PEK77-R-HOME-LIB"
 
-export PATH="/home/vcap/app/R/bin/:$PATH"
-export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
-export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
+export PATH="$PATH:/home/vcap/app/R/bin/"
+export LIBRARY_PATH="$LIBRARY_PATH:/home/vcap/app/R/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/vcap/app/R/lib"
 echo $PATH
 echo $LIBRARY_PATH
 echo $LD_LIBRARY_PATH
