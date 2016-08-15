@@ -57,7 +57,7 @@ echo "PEK77-R-3.3.1"
 wget "https://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz"
 tar zxf R-3.3.1.tar.gz
 cd R-3.3.1
-./configure --prefix=/home/vcap/app/R --with-readline=yes --with-libpng=yes --with-x=no
+./configure --prefix=/home/vcap/app/R --with-readline=no --with-x=no
 make -j16
 make install
 cd ..
