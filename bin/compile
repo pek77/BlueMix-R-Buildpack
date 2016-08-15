@@ -71,6 +71,9 @@ echo "PEK77-R-HOME-LIB"
 export PATH="/home/vcap/app/R/bin/:$PATH"
 export LIBRARY_PATH="/home/vcap/app/R/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/vcap/app/R/lib:$LD_LIBRARY_PATH"
+echo $PATH
+echo $LIBRARY_PATH
+echo $LD_LIBRARY_PATH
 R --version
 R --vanilla <<RPROG
 	print("=====HHH+++++")
