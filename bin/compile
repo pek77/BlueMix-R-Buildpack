@@ -42,7 +42,7 @@ echo "PEK77-GCC"
 wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz"
 tar zxf gcc-4.9.4.tar.gz
 cd gcc-4.9.4
-./configure --prefix=/home/vcap/app/gccF --disable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/gcc  --with-mpfr=/home/vcap/app/gcc --with-mpc=/home/vcap/app/gcc --with-fpmath=sse --disable-multilib
+./configure --prefix=/home/vcap/app/gccF --enable-languages=fortran --with-gmp=/home/vcap/app/gcc  --with-mpfr=/home/vcap/app/gcc --with-mpc=/home/vcap/app/gcc
 make -j16
 make install
 cd ..
