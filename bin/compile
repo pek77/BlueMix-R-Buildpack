@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+cd /usr/bin
+ls 
+
 cd /home/vcap/app/
 
 mkdir R
