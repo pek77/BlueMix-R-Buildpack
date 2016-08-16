@@ -32,9 +32,11 @@ wget "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"
 tar zxf mpc-1.0.3.tar.gz
 cd mpc-1.0.3
 ./configure --enable-shared --disable-static --prefix=/home/vcap/app/gcc --with-gmp=/home/vcap/app/gcc  --with-mpfr=/home/vcap/app/gcc
+make clean
 make -j16
 #make check
 make install
+make clean
 cd ..
 
 #export LD_LIBRARY_PATH="/home/vcap/app/gcc:$LD_LIBRARY_PATH"
@@ -43,8 +45,10 @@ wget "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.gz"
 tar zxf gcc-4.9.4.tar.gz
 cd gcc-4.9.4
 ./configure --prefix=/home/vcap/app/gccF --enable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=fortran --enable-libgomp --enable-lto --enable-threads=posix --enable-tls --with-gmp=/home/vcap/app/gcc  --with-mpfr=/home/vcap/app/gcc --with-mpc=/home/vcap/app/gcc --with-fpmath=sse --disable-multilib
+make clean
 make -j16
 make install
+make clean
 cd ..
 
 export LIBRARY_PATH="$LIBRARY_PATH:/home/vcap/app/gccF/lib64:/home/vcap/app/gccF/lib"
@@ -58,8 +62,10 @@ wget "https://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz"
 tar zxf R-3.3.1.tar.gz
 cd R-3.3.1
 ./configure --prefix=/home/vcap/app/R --with-readline=no --with-x=no
+make clean
 make -j16
 make install
+make clean
 cd ..
 echo "PEK77-FINISH"
 
